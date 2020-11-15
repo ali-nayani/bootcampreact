@@ -25,13 +25,23 @@ jobs:
         uses: actions/setup-node@v2-beta
         with:
           node-version: 12
-      - run: npm install
+      #- run: npm install
       
       #npm build
-      - name: Npm Build
-        run: npm run build
-          
-      # Surge
+      #- name: Npm Build
+      #  run: npm run build
+      
+      #commented npm install and build n tested using yarn
+
+      - name: git hub actions for yarn
+        uses: Borales/actions-yarn@v2.1.0
+        with:
+          cmd: install #npm install
+      #npm build
+      - name: Yarn Build
+        run: yarn build
+      
+        # Surge
       - name: Install Surge
         run: npm install -g surge
       - name: Run Surge
